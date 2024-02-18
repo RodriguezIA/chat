@@ -1,13 +1,16 @@
-import { Suspense } from "react"
-import { ReactRouter } from "./routes"
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom"
+import Login from "./modules/auth/login/Login"
 
 function App() {
 
   return (
     <>
-      <Suspense fallback={<div></div>}>
-        <ReactRouter />
-      </Suspense>
+      <HashRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Navigate to="/login" />} />
+        </Routes>
+      </HashRouter>
     </>
   )
 }

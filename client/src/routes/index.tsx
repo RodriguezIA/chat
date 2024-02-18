@@ -6,7 +6,7 @@ import ErrorPage from './ErrorPage'
 
 const routes = createBrowserRouter([
     {
-        path: "/",
+        path: "/chat",
         element: <Outlet />,
         errorElement: <ErrorPage />,
         children: [
